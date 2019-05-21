@@ -43,6 +43,11 @@ namespace Managers
         // static instance of GameManager which allows it to be accessed by any other script 
         public static GameManager Instance;
 
+        public UserInterfaceManager UserInterfaceManager
+        {
+            get { return this.gameObject.GetComponent<UserInterfaceManager>(); }
+        }
+
         private void Awake()
         {
             if (Instance == null)
@@ -65,7 +70,7 @@ namespace Managers
 
         public void Initialize()
         {
-            //
+            UserInterfaceManager.Initialize();
         }
     }
 }
