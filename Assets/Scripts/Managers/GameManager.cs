@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Services;
+using UnityEngine;
 
 /*
 Описание:
@@ -48,6 +49,8 @@ namespace Managers
             get { return this.gameObject.GetComponent<UserInterfaceManager>(); }
         }
 
+        public ClickService ClickService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -71,6 +74,7 @@ namespace Managers
         public void Initialize()
         {
             UserInterfaceManager.Initialize();
+            ClickService = new ClickService();
         }
     }
 }
