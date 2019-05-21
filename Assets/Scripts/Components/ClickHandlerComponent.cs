@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Components
@@ -17,7 +18,9 @@ namespace Components
 
         private void ButtonOnClick()
         {
-            Debug.Log("Click was handled.");
+            Debug.Log("ClickHandled was handled.");
+
+            GameManager.Instance.ClickService.InvokeClickEvent();
         }
     }
 }
