@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Managers;
 using UnityEngine;
 using Utils;
@@ -27,6 +27,18 @@ namespace Services
                 _currentGameState = value;
 
                 CurrentGameStateChanged.Invoke(_currentGameState);
+                // игрок проигрывает,
+                if (_currentGameState == GameState.Finished)
+                {
+                    Time.timeScale = 0;
+                }
+                // re-initializing the game
+                if (_currentGameState == GameState.NotStarted)
+                {
+                    Time.timeScale = 1;
+
+                    GameManager.Instance.ReInitialize();
+                }
             }
         }
 
@@ -46,6 +58,14 @@ namespace Services
 
         private void ClickServiceClickHandled()
         {
+            // в таком случае игра начинает заново по клику в любой части экрана.
+            if (CurrentGameState == GameState.Finished)
+            {
+                CurrentGameState = GameState.NotStarted;
+
+                return;
+            }
+
             if (CurrentGameState != GameState.Started)
             {
                 CurrentGameState = GameState.Started;
