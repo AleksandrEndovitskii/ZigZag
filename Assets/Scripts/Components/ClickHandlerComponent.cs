@@ -18,7 +18,7 @@ namespace Components
 
         private void ButtonOnClick()
         {
-            Debug.Log("ClickHandled was handled.");
+            Debug.Log("Click was handled.");
 
             GameManager.Instance.ClickService.InvokeClickEvent();
         }
