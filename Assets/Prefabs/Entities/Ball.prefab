@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466393036730949272}
-  - component: {fileID: 1634981507535275521}
-  - component: {fileID: 1989499017014875045}
-  - component: {fileID: 4356091190562529626}
   - component: {fileID: 8370379760452049360}
   - component: {fileID: 818497776704872881}
   - component: {fileID: -3307881396708424624}
   - component: {fileID: -643597608151543032}
+  - component: {fileID: 1634981507535275521}
+  - component: {fileID: 1989499017014875045}
+  - component: {fileID: 4356091190562529626}
   - component: {fileID: -4425403112906444386}
   m_Layer: 0
   m_Name: Ball
@@ -38,6 +38,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8370379760452049360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492038364900605509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8d0331496e7604a9152ab868f02b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &818497776704872881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492038364900605509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52193dcf48940004086b37af9d5955d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3307881396708424624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492038364900605509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec4e047c82784d488500e007d2d7f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-643597608151543032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492038364900605509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949b755d2255b3940bb618847a28d321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1634981507535275521
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97,54 +145,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8370379760452049360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492038364900605509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8d0331496e7604a9152ab868f02b3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &818497776704872881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492038364900605509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52193dcf48940004086b37af9d5955d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-3307881396708424624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492038364900605509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec4e047c82784d488500e007d2d7f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-643597608151543032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492038364900605509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949b755d2255b3940bb618847a28d321, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &-4425403112906444386
 Rigidbody:
   m_ObjectHideFlags: 0
