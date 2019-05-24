@@ -15,7 +15,7 @@ using UnityEngine;
 
 Если шарик наезжает на кристалл, то кристалл исчезает с тайла и считается, что игрок подобрал этот кристалл.
 Шарик постоянно движется по полю с одинаковой скоростью.
-Шарик может двигаться либо прямо, либо вправо.
+
 Изменение направления движения шарика происходит по клику в любую часть игрового поля.
 Если шарик двигается прямо, то после клика, он начнет двигаться вправо, после следующего клика шарик начнет двигаться прямо.
 Камера при этом двигается за шариком таким образом, чтобы он всегда находился в центре экрана по вертикали. При начале игры шарик не двигается до тех пор, 
@@ -51,6 +51,8 @@ namespace Managers
 
         public ClickService ClickService;
 
+        public MovementDirectionService MovementDirectionService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -75,6 +77,7 @@ namespace Managers
         {
             UserInterfaceManager.Initialize();
             ClickService = new ClickService();
+            MovementDirectionService = new MovementDirectionService();
         }
     }
 }
