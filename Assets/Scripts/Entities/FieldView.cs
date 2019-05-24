@@ -31,6 +31,7 @@ namespace Entities
                         cellViewInstance.gameObject.transform.position.x + x,
                         cellViewInstance.gameObject.transform.position.y + y,
                         cellViewInstance.gameObject.transform.position.z);
+                    cellViewInstance.transform.SetParent(this.gameObject.transform);
                     _cellViewInstance.Add(cellViewInstance);
                 }
             }
