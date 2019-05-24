@@ -1,4 +1,4 @@
-﻿using Services;
+using Services;
 using UnityEngine;
 
 /*
@@ -51,6 +51,8 @@ namespace Managers
 
         public MovementDirectionService MovementDirectionService;
 
+        public GameStateService GameStateService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -76,6 +78,7 @@ namespace Managers
             UserInterfaceManager.Initialize();
             ClickService = new ClickService();
             MovementDirectionService = new MovementDirectionService();
+            GameStateService = new GameStateService();
         }
     }
 }
