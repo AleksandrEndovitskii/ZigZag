@@ -5,8 +5,6 @@ using UnityEngine;
 Описание:
 Если шарик выходит за рамки тайла в пустое пространство (туда, где нет тайла), то  шарик падает за поле и игрок проигрывает, в таком случае игра начинает заново по клику в любой части экрана.
 
-Шарик постоянно движется по полю с одинаковой скоростью.
-
 Камера при этом двигается за шариком таким образом, чтобы он всегда находился в центре экрана по вертикали.
 
 Дополнительно:
@@ -50,6 +48,8 @@ namespace Managers
 
         public CollectedCrystalsCountingService CollectedCrystalsCountingService;
 
+        public MovementSpeedService MovementSpeedService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -78,6 +78,7 @@ namespace Managers
             MovementDirectionService = new MovementDirectionService();
             GameStateService = new GameStateService();
             CollectedCrystalsCountingService = new CollectedCrystalsCountingService();
+            MovementSpeedService = new MovementSpeedService();
         }
     }
 }
