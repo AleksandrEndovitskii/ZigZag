@@ -10,16 +10,24 @@ namespace Managers
 
         [SerializeField]
         private FieldView _fieldViewPrefab;
+        [SerializeField]
+        private BallView _ballViewPrefab;
 
         private Light _directionalLightInstance;
 
         private FieldView _fieldViewInstance;
+        private BallView _ballViewInstance;
 
         public void Initialize()
         {
             _directionalLightInstance = Instantiate(_directionalLightPrefab);
 
             _fieldViewInstance = Instantiate(_fieldViewPrefab);
+            _ballViewInstance = Instantiate(_ballViewPrefab);
+            _ballViewInstance.transform.position = new Vector3(
+                _ballViewInstance.gameObject.transform.position.x,
+                _ballViewInstance.gameObject.transform.position.y,
+                _ballViewInstance.gameObject.transform.position.z - 1f); // to make crystal visible on Cell
         }
     }
 }

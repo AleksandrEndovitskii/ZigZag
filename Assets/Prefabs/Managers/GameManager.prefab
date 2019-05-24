@@ -77,3 +77,5 @@ MonoBehaviour:
     type: 3}
   _fieldViewPrefab: {fileID: -4237199419151431425, guid: ac83e03213d13ac4aa0c78dd47cebd5c,
     type: 3}
+  _ballViewPrefab: {fileID: 8370379760452049360, guid: 5452c4d32d31d034181490e18f20960f,
+    type: 3}
