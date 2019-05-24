@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Components
 {
-    public class ObjectVerticalFollowingComponent : MonoBehaviour
+    public class ZAxisObjectFollowingComponent : MonoBehaviour
     {
         // Камера при этом двигается за шариком таким образом, чтобы он всегда находился в центре экрана по вертикали.
         private void Update()
