@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using Utils;
 
 namespace Services
 {
-    public class CollectedCrystalsCountingService
+    public class CollectedCrystalsCountingService : IInitializeble, IUnInitializeble
     {
         public Action<int> CollectedCrystalsCountChanged = delegate { };
 
@@ -30,9 +31,14 @@ namespace Services
 
         private int _collectedCrystalsCount;
 
-        public CollectedCrystalsCountingService()
+        public void Initialize()
         {
             CollectedCrystalsCount = 0;
+        }
+
+        public void UnInitialize()
+        {
+
         }
     }
 }

@@ -1,5 +1,6 @@
-﻿using Services;
+using Services;
 using UnityEngine;
+using Utils;
 
 /*
 Описание:
@@ -23,7 +24,7 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IInitializeble, IUnInitializeble, IReInitializeble
     {
         // static instance of GameManager which allows it to be accessed by any other script 
         public static GameManager Instance;
@@ -72,12 +73,34 @@ namespace Managers
         {
             UserInterfaceManager.Initialize();
             ClickService = new ClickService();
+            ClickService.Initialize();
             MovementDirectionService = new MovementDirectionService();
+            MovementDirectionService.Initialize();
             GameStateService = new GameStateService();
+            GameStateService.Initialize();
             CollectedCrystalsCountingService = new CollectedCrystalsCountingService();
+            CollectedCrystalsCountingService.Initialize();
             MovementSpeedService = new MovementSpeedService();
+            MovementSpeedService.Initialize();
             // GameObjectsManager needs GameStateService
             GameObjectsManager.Initialize();
+        }
+
+        public void UnInitialize()
+        {
+            GameObjectsManager.UnInitialize();
+            MovementSpeedService.UnInitialize();
+            CollectedCrystalsCountingService.UnInitialize();
+            GameStateService.UnInitialize();
+            MovementDirectionService.UnInitialize();
+            ClickService.UnInitialize();
+            UserInterfaceManager.UnInitialize();
+        }
+
+        public void ReInitialize()
+        {
+            UnInitialize();
+            Initialize();
         }
     }
 }

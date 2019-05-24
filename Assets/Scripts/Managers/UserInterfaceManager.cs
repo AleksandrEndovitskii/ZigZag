@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using Utils;
 
 namespace Managers
 {
-    public class UserInterfaceManager : MonoBehaviour
+    public class UserInterfaceManager : MonoBehaviour, IInitializeble, IUnInitializeble
     {
         [SerializeField]
         private Canvas _windowsCanvasPrefab;
@@ -17,6 +18,14 @@ namespace Managers
         {
             _windowsCanvasInstance = Instantiate(_windowsCanvasPrefab);
             _eventSystemInstance = Instantiate(_eventSystemPrefab);
+        }
+
+        public void UnInitialize()
+        {
+            Destroy(_eventSystemInstance.gameObject);
+            _eventSystemInstance = null;
+            Destroy(_windowsCanvasInstance.gameObject);
+            _windowsCanvasInstance = null;
         }
     }
 }

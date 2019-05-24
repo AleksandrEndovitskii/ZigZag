@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using Managers;
 using UnityEngine;
+using Utils;
 
 namespace Services
 {
-    public class GameStateService
+    public class GameStateService : IInitializeble, IUnInitializeble
     {
         public Action<GameState> CurrentGameStateChanged = delegate { };
 
@@ -31,11 +32,16 @@ namespace Services
 
         private GameState _currentGameState;
 
-        public GameStateService()
+        public void Initialize()
         {
             CurrentGameState = GameState.NotStarted;
 
             GameManager.Instance.ClickService.ClickHandled += ClickServiceClickHandled;
+        }
+
+        public void UnInitialize()
+        {
+            GameManager.Instance.ClickService.ClickHandled -= ClickServiceClickHandled;
         }
 
         private void ClickServiceClickHandled()

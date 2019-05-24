@@ -1,14 +1,20 @@
 ﻿using System;
+using Utils;
 
 namespace Services
 {
-    public class ClickService
+    public class ClickService : IInitializeble, IUnInitializeble
     {
         public Action ClickHandled = delegate { };
 
-        public ClickService()
+        public void Initialize()
         {
-            
+
+        }
+
+        public void UnInitialize()
+        {
+
         }
 
         public void InvokeClickEvent()

@@ -1,18 +1,24 @@
 ﻿using Managers;
 using UnityEngine;
+using Utils;
 
 namespace Services
 {
-    public class MovementDirectionService
+    public class MovementDirectionService : IInitializeble, IUnInitializeble
     {
         public Vector3 CurrentMovementDirection;
 
-        public MovementDirectionService()
+        public void Initialize()
         {
             // Шарик может двигаться либо прямо, либо вправо.
             CurrentMovementDirection = Vector3.forward;
 
             GameManager.Instance.ClickService.ClickHandled += ClickServiceClickHandled;
+        }
+
+        public void UnInitialize()
+        {
+            GameManager.Instance.ClickService.ClickHandled -= ClickServiceClickHandled;
         }
 
         private void ClickServiceClickHandled()

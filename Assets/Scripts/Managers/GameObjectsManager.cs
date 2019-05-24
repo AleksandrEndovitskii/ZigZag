@@ -1,9 +1,10 @@
 ﻿using Entities;
 using UnityEngine;
+using Utils;
 
 namespace Managers
 {
-    public class GameObjectsManager : MonoBehaviour
+    public class GameObjectsManager : MonoBehaviour, IInitializeble, IUnInitializeble
     {
         [SerializeField]
         private Light _directionalLightPrefab;
@@ -32,6 +33,18 @@ namespace Managers
                 BallViewInstance.gameObject.transform.position.x,
                 BallViewInstance.gameObject.transform.position.y + 1,
                 BallViewInstance.gameObject.transform.position.z);
+        }
+
+        public void UnInitialize()
+        {
+            Destroy(BallViewInstance.gameObject);
+            BallViewInstance = null;
+            Destroy(_fieldViewInstance.gameObject);
+            _fieldViewInstance = null;
+            Destroy(_cameraInstance.gameObject);
+            _cameraInstance = null;
+            Destroy(_directionalLightInstance.gameObject);
+            _directionalLightInstance = null;
         }
     }
 }
