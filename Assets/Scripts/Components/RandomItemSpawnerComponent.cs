@@ -2,12 +2,12 @@
 
 namespace Components
 {
-    public class RandomCrystalSpawnerComponent : MonoBehaviour
+    public class RandomItemSpawnerComponent : MonoBehaviour
     {
         [SerializeField]
-        private CrystalComponent _crystalComponentPrefab;
+        private GameObject _Prefab;
 
-        private CrystalComponent _crystalComponentInstance;
+        private GameObject _instance;
 
         private static System.Random _random = new System.Random();
 
@@ -17,7 +17,7 @@ namespace Components
             // На каждом тайле может быть 1 кристалл или ни одного, это определяется случайным образом.
             if (randomNumber > 0)
             {
-                _crystalComponentInstance = Instantiate(_crystalComponentPrefab, this.gameObject.transform);
+                _instance = Instantiate(_Prefab, this.gameObject.transform);
             }
         }
     }
