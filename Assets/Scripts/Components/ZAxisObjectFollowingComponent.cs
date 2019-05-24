@@ -10,6 +10,11 @@ namespace Components
         {
             var targetObject = GameManager.Instance.GameObjectsManager.BallViewInstance;
 
+            if (targetObject == null)
+            {
+                return;
+            }
+
             this.gameObject.transform.position = new Vector3(
                 this.gameObject.transform.position.x,
                 this.gameObject.transform.position.y,
