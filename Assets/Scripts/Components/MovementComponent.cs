@@ -13,7 +13,7 @@ namespace Components
 
         private void GameStateServiceCurrentGameStateChanged(GameState gameState)
         {
-            if (gameState == GameState.InProgress)
+            if (gameState == GameState.Started)
             {
                 StartMovement();
             }
