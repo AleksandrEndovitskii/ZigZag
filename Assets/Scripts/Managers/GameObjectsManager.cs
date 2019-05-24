@@ -19,7 +19,7 @@ namespace Managers
         private Camera _cameraInstance;
 
         private FieldView _fieldViewInstance;
-        private BallView _ballViewInstance;
+        public BallView BallViewInstance;
 
         public void Initialize()
         {
@@ -27,11 +27,11 @@ namespace Managers
             _cameraInstance = Instantiate(_cameraPrefab);
 
             _fieldViewInstance = Instantiate(_fieldViewPrefab);
-            _ballViewInstance = Instantiate(_ballViewPrefab);
-            _ballViewInstance.transform.position = new Vector3(
-                _ballViewInstance.gameObject.transform.position.x,
-                _ballViewInstance.gameObject.transform.position.y + 1,
-                _ballViewInstance.gameObject.transform.position.z);
+            BallViewInstance = Instantiate(_ballViewPrefab);
+            BallViewInstance.transform.position = new Vector3(
+                BallViewInstance.gameObject.transform.position.x,
+                BallViewInstance.gameObject.transform.position.y + 1,
+                BallViewInstance.gameObject.transform.position.z);
         }
     }
 }
