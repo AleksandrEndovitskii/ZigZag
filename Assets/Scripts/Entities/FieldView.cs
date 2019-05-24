@@ -24,13 +24,13 @@ namespace Entities
             // В самом начале игры поле всегда представляет собой квадратную площадку тайлов размером 3*3,
             for (var x = 0; x < _startWidth; x++)
             {
-                for (var y = 0; y < _startHeight; y++)
+                for (var z = 0; z < _startHeight; z++)
                 {
                     var cellViewInstance = Instantiate(_cellViewPrefab);
                     cellViewInstance.gameObject.transform.position = new Vector3(
                         cellViewInstance.gameObject.transform.position.x + x,
-                        cellViewInstance.gameObject.transform.position.y + y,
-                        cellViewInstance.gameObject.transform.position.z);
+                        cellViewInstance.gameObject.transform.position.y,
+                        cellViewInstance.gameObject.transform.position.z + z);
                     cellViewInstance.transform.SetParent(this.gameObject.transform);
                     _cellViewInstance.Add(cellViewInstance);
                 }

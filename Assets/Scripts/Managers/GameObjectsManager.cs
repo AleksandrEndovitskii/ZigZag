@@ -26,8 +26,8 @@ namespace Managers
             _ballViewInstance = Instantiate(_ballViewPrefab);
             _ballViewInstance.transform.position = new Vector3(
                 _ballViewInstance.gameObject.transform.position.x,
-                _ballViewInstance.gameObject.transform.position.y,
-                _ballViewInstance.gameObject.transform.position.z - 1f); // to make crystal visible on Cell
+                _ballViewInstance.gameObject.transform.position.y + 1,
+                _ballViewInstance.gameObject.transform.position.z);
         }
     }
 }

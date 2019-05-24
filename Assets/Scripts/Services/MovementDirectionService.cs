@@ -10,10 +10,7 @@ namespace Services
         public MovementDirectionService()
         {
             // Шарик может двигаться либо прямо, либо вправо.
-            // Vector3.up // forward
-            // Vector3.right
-
-            CurrentMovementDirection = Vector3.up;
+            CurrentMovementDirection = Vector3.forward;
 
             GameManager.Instance.ClickService.ClickHandled += ClickServiceClickHandled;
         }
@@ -27,7 +24,7 @@ namespace Services
         public void ChangeMovementDirection()
         {
             // Если шарик двигается прямо, то после клика, он начнет двигаться вправо
-            if (CurrentMovementDirection == Vector3.up)
+            if (CurrentMovementDirection == Vector3.forward)
             {
                 CurrentMovementDirection = Vector3.right;
 
@@ -36,7 +33,7 @@ namespace Services
             // после следующего клика шарик начнет двигаться прямо.
             if (CurrentMovementDirection == Vector3.right)
             {
-                CurrentMovementDirection = Vector3.up;
+                CurrentMovementDirection = Vector3.forward;
 
                 return;
             }
