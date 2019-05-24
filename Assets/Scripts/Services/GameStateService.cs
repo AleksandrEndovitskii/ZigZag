@@ -1,4 +1,5 @@
 ﻿using System;
+using Managers;
 using UnityEngine;
 
 namespace Services
@@ -33,6 +34,16 @@ namespace Services
         public GameStateService()
         {
             CurrentGameState = GameState.None;
+
+            GameManager.Instance.ClickService.ClickHandled += ClickServiceClickHandled;
+        }
+
+        private void ClickServiceClickHandled()
+        {
+            if (CurrentGameState != GameState.InProgress)
+            {
+                CurrentGameState = GameState.InProgress;
+            }
         }
     }
 
