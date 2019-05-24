@@ -18,6 +18,10 @@ namespace Components
             if (randomNumber > 0)
             {
                 _instance = Instantiate(_Prefab, this.gameObject.transform);
+                _instance.transform.position = new Vector3(
+                    _instance.gameObject.transform.position.x,
+                    _instance.gameObject.transform.position.y,
+                    _instance.gameObject.transform.position.z - 1f); // to make crystal visible on Cell
             }
         }
     }
