@@ -46,6 +46,11 @@ namespace Managers
             get { return this.gameObject.GetComponent<UserInterfaceManager>(); }
         }
 
+        public GameObjectsManager GameObjectsManager
+        {
+            get { return this.gameObject.GetComponent<GameObjectsManager>(); }
+        }
+
         public ClickService ClickService;
 
         public MovementDirectionService MovementDirectionService;
@@ -75,6 +80,7 @@ namespace Managers
         public void Initialize()
         {
             UserInterfaceManager.Initialize();
+            GameObjectsManager.Initialize();
             ClickService = new ClickService();
             MovementDirectionService = new MovementDirectionService();
             GameStateService = new GameStateService();
