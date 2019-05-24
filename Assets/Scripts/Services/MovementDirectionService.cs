@@ -1,14 +1,19 @@
 ﻿using Managers;
+using UnityEngine;
 
 namespace Services
 {
     public class MovementDirectionService
     {
-        public MovementDirection CurrentMovementDirection;
+        public Vector3 CurrentMovementDirection;
 
         public MovementDirectionService()
         {
-            CurrentMovementDirection = MovementDirection.Forward;
+            // Шарик может двигаться либо прямо, либо вправо.
+            // Vector3.up // forward
+            // Vector3.right
+
+            CurrentMovementDirection = Vector3.up;
 
             GameManager.Instance.ClickService.ClickHandled += ClickServiceClickHandled;
         }
@@ -19,29 +24,22 @@ namespace Services
             ChangeMovementDirection();
         }
 
-        // Если шарик двигается прямо, то после клика, он начнет двигаться вправо, после следующего клика шарик начнет двигаться прямо.
         public void ChangeMovementDirection()
         {
-            if (CurrentMovementDirection == MovementDirection.Forward)
+            // Если шарик двигается прямо, то после клика, он начнет двигаться вправо
+            if (CurrentMovementDirection == Vector3.up)
             {
-                CurrentMovementDirection = MovementDirection.Right;
+                CurrentMovementDirection = Vector3.right;
 
                 return;
             }
-
-            if (CurrentMovementDirection == MovementDirection.Right)
+            // после следующего клика шарик начнет двигаться прямо.
+            if (CurrentMovementDirection == Vector3.right)
             {
-                CurrentMovementDirection = MovementDirection.Forward;
+                CurrentMovementDirection = Vector3.up;
 
                 return;
             }
         }
-    }
-
-    // Шарик может двигаться либо прямо, либо вправо.
-    public enum MovementDirection
-    {
-        Forward,
-        Right,
     }
 }
