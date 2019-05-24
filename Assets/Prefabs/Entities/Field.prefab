@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961f462e536d3ab48a4782ec4572621b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cellViewPrefab: {fileID: 7940305855331752179, guid: 5f22cda6f849a224d9752a8ace078dd6,
+    type: 3}

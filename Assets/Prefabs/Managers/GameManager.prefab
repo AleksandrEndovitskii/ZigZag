@@ -73,3 +73,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c7bdaa7b8605048a164dc0853a8301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fieldViewPrefab: {fileID: -4237199419151431425, guid: ac83e03213d13ac4aa0c78dd47cebd5c,
+    type: 3}
