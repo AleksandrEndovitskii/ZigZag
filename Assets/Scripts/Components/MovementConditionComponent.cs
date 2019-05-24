@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Components
 {
     [RequireComponent(typeof(ObjectMovementComponent))]
-    public class MovementComponent : MonoBehaviour
+    public class MovementConditionComponent : MonoBehaviour
     {
         private void Awake()
         {
