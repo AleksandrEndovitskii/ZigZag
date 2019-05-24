@@ -9,7 +9,6 @@ using UnityEngine;
 Поле генерируется случайным образом бесконечно, таким образом, чтобы по нему мог пройти шарик (не должно быть непроходимых участков).
 В самом начале игры поле всегда представляет собой квадратную площадку тайлов размером 3*3, генерация дорожки шириной в 1 тайл начинается только после этой площадки.
 
-Если шарик наезжает на кристалл, то кристалл исчезает с тайла и считается, что игрок подобрал этот кристалл.
 Шарик постоянно движется по полю с одинаковой скоростью.
 
 Камера при этом двигается за шариком таким образом, чтобы он всегда находился в центре экрана по вертикали.
@@ -53,6 +52,8 @@ namespace Managers
 
         public GameStateService GameStateService;
 
+        public CollectedCrystalsCountingService CollectedCrystalsCountingService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -80,6 +81,7 @@ namespace Managers
             ClickService = new ClickService();
             MovementDirectionService = new MovementDirectionService();
             GameStateService = new GameStateService();
+            CollectedCrystalsCountingService = new CollectedCrystalsCountingService();
         }
     }
 }
