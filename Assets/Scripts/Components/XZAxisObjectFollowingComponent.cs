@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Components
 {
-    public class ZAxisObjectFollowingComponent : MonoBehaviour
+    public class XZAxisObjectFollowingComponent : MonoBehaviour
     {
         private const float HEIGHT_CORRECTION = 3f;
 
@@ -18,9 +18,9 @@ namespace Components
             }
 
             this.gameObject.transform.position = new Vector3(
-                this.gameObject.transform.position.x,
-                targetObject.transform.position.x * 0.5f + targetObject.transform.position.z * 0.5f + HEIGHT_CORRECTION,
-                this.gameObject.transform.position.z);
+                (targetObject.gameObject.transform.position.x + targetObject.gameObject.transform.position.z) / 2 - HEIGHT_CORRECTION,
+                this.gameObject.transform.position.y,
+                (targetObject.gameObject.transform.position.x + targetObject.gameObject.transform.position.z) / 2 - HEIGHT_CORRECTION);
         }
     }
 }
