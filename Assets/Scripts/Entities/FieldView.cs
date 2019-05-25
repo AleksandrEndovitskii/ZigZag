@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using Components;
+using Managers;
 using UnityEngine;
 
 namespace Entities
@@ -10,6 +11,8 @@ namespace Entities
     {
         private int _startWidth = 3;
         private int _startHeight = 3;
+
+        private CellView _lastSpawnedCellViewInstance = null;
 
         private void Awake()
         {
@@ -25,11 +28,26 @@ namespace Entities
                         cellViewInstance.gameObject.transform.position.y,
                         cellViewInstance.gameObject.transform.position.z + z);
                     cellViewInstance.transform.SetParent(this.gameObject.transform);
+
+                    _lastSpawnedCellViewInstance = cellViewInstance;
                 }
             }
 
+            _lastSpawnedCellViewInstance.gameObject.GetComponent<VisibilityDetectionComponent>().IsVisibleChanged += LastSpawnedCellViewInstanceIsVisibleChanged;
+        }
+
+        private void LastSpawnedCellViewInstanceIsVisibleChanged(MonoBehaviour monoBehaviour)
+        {
+            if (!monoBehaviour.gameObject.GetComponent<Renderer>().isVisible)
+            {
+                return;
+            }
+
+            _lastSpawnedCellViewInstance.gameObject.GetComponent<VisibilityDetectionComponent>().IsVisibleChanged -= LastSpawnedCellViewInstanceIsVisibleChanged;
+
             // Поле генерируется случайным образом бесконечно, таким образом, чтобы по нему мог пройти шарик (не должно быть непроходимых участков).
-            GameManager.Instance.RandomFiledGenerationService.StartGenerateRandomFiled();
+            var cellView = GameManager.Instance.RandomFiledGenerationService.AddCellToCell(monoBehaviour.GetComponent<CellView>());
+            cellView.gameObject.GetComponent<VisibilityDetectionComponent>().IsVisibleChanged += LastSpawnedCellViewInstanceIsVisibleChanged;
         }
     }
 }

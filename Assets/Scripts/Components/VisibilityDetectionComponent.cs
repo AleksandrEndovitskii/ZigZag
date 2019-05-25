@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Components
 {
+    [RequireComponent(typeof(Renderer))]
     public class VisibilityDetectionComponent : MonoBehaviour
     {
         public Action<MonoBehaviour> IsVisibleChanged = delegate { };

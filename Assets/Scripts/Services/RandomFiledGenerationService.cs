@@ -67,15 +67,7 @@ namespace Services
 
         }
 
-        public void StartGenerateRandomFiled()
-        {
-            for (var i = 0; i < 100; i++)
-            {
-                AddCellToCell(GameManager.Instance.GameObjectsManager.CellViewInstances.Last());
-            }
-        }
-
-        private void AddCellToCell(CellView connectedCell)
+        public CellView AddCellToCell(CellView connectedCell)
         {
             // add random Cell
             var randomNumber = _random.Next(0, 2);
@@ -94,6 +86,8 @@ namespace Services
                 connectedCell.gameObject.transform.position.x + positionCorrection.x,
                 connectedCell.gameObject.transform.position.y + positionCorrection.y,
                 connectedCell.gameObject.transform.position.z + positionCorrection.z);
+
+            return instance;
         }
 
         private Vector3 TryToModifyPositionCorrectionToGoLeft(Vector3 positionCorrection)
