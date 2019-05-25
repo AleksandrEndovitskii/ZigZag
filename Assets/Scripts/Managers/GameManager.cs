@@ -95,8 +95,8 @@ namespace Managers
         public void UnInitialize()
         {
             CellsVisibilityChangedHandlerService.UnInitialize();
-            RandomFiledGenerationService.UnInitialize();
             GameObjectsManager.UnInitialize();
+            RandomFiledGenerationService.UnInitialize();
             MovementSpeedService.UnInitialize();
             CollectedCrystalsCountingService.UnInitialize();
             GameStateService.UnInitialize();
