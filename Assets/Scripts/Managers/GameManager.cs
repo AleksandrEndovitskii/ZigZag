@@ -82,9 +82,10 @@ namespace Managers
             MovementSpeedService = new MovementSpeedService();
             MovementSpeedService.Initialize();
             // GameObjectsManager needs GameStateService
-            GameObjectsManager.Initialize();
             RandomFiledGenerationService = new RandomFiledGenerationService();
             RandomFiledGenerationService.Initialize();
+            // GameObjectsManager needs RandomFiledGenerationService
+            GameObjectsManager.Initialize();
         }
 
         public void UnInitialize()
