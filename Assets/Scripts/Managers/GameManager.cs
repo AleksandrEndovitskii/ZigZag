@@ -46,6 +46,8 @@ namespace Managers
 
         public MovementSpeedService MovementSpeedService;
 
+        public RandomFiledGenerationService RandomFiledGenerationService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -81,10 +83,13 @@ namespace Managers
             MovementSpeedService.Initialize();
             // GameObjectsManager needs GameStateService
             GameObjectsManager.Initialize();
+            RandomFiledGenerationService = new RandomFiledGenerationService();
+            RandomFiledGenerationService.Initialize();
         }
 
         public void UnInitialize()
         {
+            RandomFiledGenerationService.UnInitialize();
             GameObjectsManager.UnInitialize();
             MovementSpeedService.UnInitialize();
             CollectedCrystalsCountingService.UnInitialize();
