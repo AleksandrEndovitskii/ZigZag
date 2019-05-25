@@ -79,5 +79,9 @@ MonoBehaviour:
     type: 3}
   _fieldViewPrefab: {fileID: -4237199419151431425, guid: ac83e03213d13ac4aa0c78dd47cebd5c,
     type: 3}
+  _cellViewPrefab: {fileID: 7940305855331752179, guid: 5f22cda6f849a224d9752a8ace078dd6,
+    type: 3}
   _ballViewPrefab: {fileID: 8370379760452049360, guid: 5452c4d32d31d034181490e18f20960f,
     type: 3}
+  BallViewInstance: {fileID: 0}
+  CellViewInstances: []
