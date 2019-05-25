@@ -48,6 +48,8 @@ namespace Managers
 
         public RandomFiledGenerationService RandomFiledGenerationService;
 
+        public CellsVisibilityChangedHandlerService CellsVisibilityChangedHandlerService;
+
         private void Awake()
         {
             if (Instance == null)
@@ -86,10 +88,13 @@ namespace Managers
             RandomFiledGenerationService.Initialize();
             // GameObjectsManager needs RandomFiledGenerationService
             GameObjectsManager.Initialize();
+            CellsVisibilityChangedHandlerService = new CellsVisibilityChangedHandlerService();
+            CellsVisibilityChangedHandlerService.Initialize();
         }
 
         public void UnInitialize()
         {
+            CellsVisibilityChangedHandlerService.UnInitialize();
             RandomFiledGenerationService.UnInitialize();
             GameObjectsManager.UnInitialize();
             MovementSpeedService.UnInitialize();
