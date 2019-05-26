@@ -15,9 +15,9 @@ namespace Components
             {
                 // to prevent body blocking
                 crystalView.gameObject.GetComponent<Collider>().enabled = false;
-
+                // добавить анимацию с использованием системы частиц исчезновения кристалла при подборе его с тайла
                 crystalView.gameObject.GetComponent<DOTweenAnimation>().DORestartById("ScaleDown");
-
+                // за подбор одного кристалла начисляется 1 очко
                 GameManager.Instance.CollectedCrystalsCountingService.CollectedCrystalsCount++;
             }
         }

@@ -4,6 +4,7 @@ using Utils;
 
 namespace Services
 {
+    // реализовать систему подсчета очков
     public class CollectedCrystalsCountingService : IInitializeble, IUnInitializeble
     {
         public Action<int> CollectedCrystalsCountChanged = delegate { };

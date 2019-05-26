@@ -15,7 +15,7 @@ namespace Components
 
             GameManager.Instance.CollectedCrystalsCountingService.CollectedCrystalsCountChanged += CollectedCrystalsCountingServiceCollectedCrystalsCountChanged;
         }
-
+        // выводить результат на экран
         private void CollectedCrystalsCountingServiceCollectedCrystalsCountChanged(int collectedCrystalsCount)
         {
             this.gameObject.GetComponent<TextMeshProUGUI>().text = DEFAULT_TEXT + collectedCrystalsCount;
