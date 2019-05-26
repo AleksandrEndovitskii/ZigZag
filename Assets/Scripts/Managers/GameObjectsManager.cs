@@ -29,11 +29,12 @@ namespace Managers
 
         public void Initialize()
         {
+            CellViewInstances = new List<CellView>();
+
             _directionalLightInstance = Instantiate(_directionalLightPrefab);
             _cameraInstance = Instantiate(_cameraPrefab);
 
             _fieldViewInstance = Instantiate(_fieldViewPrefab);
-            CellViewInstances = new List<CellView>();
             BallViewInstance = Instantiate(_ballViewPrefab);
             BallViewInstance.transform.position = new Vector3(
                 BallViewInstance.gameObject.transform.position.x,
