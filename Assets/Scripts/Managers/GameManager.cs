@@ -77,7 +77,7 @@ namespace Managers
             // GameObjectsManager needs GameStateService
             RandomFiledGenerationService = new RandomFiledGenerationService();
             RandomFiledGenerationService.Initialize();
-            // GameObjectsManager needs RandomFiledGenerationService
+            // GameObjectsManager needs RandomFieldGenerationService
             GameObjectsManager.Initialize();
         }
 
