@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DG.Tweening;
+using Entities;
 using Managers;
 using UnityEngine;
 
@@ -12,7 +13,10 @@ namespace Components
             var crystalView = collision.gameObject.GetComponent<CrystalView>();
             if (crystalView != null)
             {
-                Destroy(crystalView.gameObject);
+                // to prevent body blocking
+                crystalView.gameObject.GetComponent<Collider>().enabled = false;
+
+                crystalView.gameObject.GetComponent<DOTweenAnimation>().DORestartById("ScaleDown");
 
                 GameManager.Instance.CollectedCrystalsCountingService.CollectedCrystalsCount++;
             }
