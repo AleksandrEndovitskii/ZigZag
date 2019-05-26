@@ -69,7 +69,6 @@ namespace Managers
 
         public void Initialize()
         {
-            UserInterfaceManager.Initialize();
             ClickService = new ClickService();
             ClickService.Initialize();
             MovementDirectionService = new MovementDirectionService();
@@ -78,6 +77,8 @@ namespace Managers
             GameStateService.Initialize();
             CollectedCrystalsCountingService = new CollectedCrystalsCountingService();
             CollectedCrystalsCountingService.Initialize();
+            // UserInterfaceManager needs CollectedCrystalsCountingService
+            UserInterfaceManager.Initialize();
             MovementSpeedService = new MovementSpeedService();
             MovementSpeedService.Initialize();
             // GameObjectsManager needs GameStateService
